@@ -19,7 +19,18 @@ public class SinglyLinkedlist {
 		 }
 		 System.out.print("null");
 	 }
-		
+	 public int length() {
+		 if(head==null)
+			 return 0;
+		 int count=0;
+		 ListNode current = head;
+		while(current!=null) {
+			count++;
+			current=current.next;
+			
+		 }
+		return count;
+	 }
 	 public static void main(String[] args) {
 		 SinglyLinkedlist sll = new SinglyLinkedlist();
 		 sll.head = new ListNode(10);
@@ -31,6 +42,7 @@ public class SinglyLinkedlist {
 		 second.next = third; //10->1->8
 		 third.next= fourth; //10->1->8->11->null	
 		 sll.display();
+		 System.out.println(sll.length());
 		 
 	 }
 
