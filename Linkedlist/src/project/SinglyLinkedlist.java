@@ -31,6 +31,11 @@ public class SinglyLinkedlist {
 		 }
 		return count;
 	 }
+	 public void insertAtstart(int value) {
+			ListNode newNode = new ListNode(value);
+			newNode.next = head;
+			head = newNode;
+		}
 	 public static void main(String[] args) {
 		 SinglyLinkedlist sll = new SinglyLinkedlist();
 		 sll.head = new ListNode(10);
@@ -43,6 +48,12 @@ public class SinglyLinkedlist {
 		 third.next= fourth; //10->1->8->11->null	
 		 sll.display();
 		 System.out.println(sll.length());
+		 SinglyLinkedlist sll1 = new SinglyLinkedlist();
+			sll1.insertAtstart(12);
+			sll1.insertAtstart(80);
+			sll1.insertAtstart(10);
+			sll1.display();
+		 
 		 
 	 }
 
