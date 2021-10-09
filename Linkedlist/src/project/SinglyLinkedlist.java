@@ -14,7 +14,7 @@ public class SinglyLinkedlist {
 	 public void display() {
 		 ListNode current = head;
 		 while(current!=null) {
-			 System.out.print(current.data + "->");
+			 System.out.println(current.data + "->");
 			 current=current.next;
 		 }
 		 System.out.print("null");
@@ -36,6 +36,18 @@ public class SinglyLinkedlist {
 			newNode.next = head;
 			head = newNode;
 		}
+	 public void insertAtend(int value) {
+			ListNode newNode = new ListNode(value);
+			if(head==null) {
+				head=newNode;
+				return;
+				}
+			ListNode current = head;
+			while(current.next!=null) {
+				current=current.next;
+			}
+			current.next=newNode;
+		}
 	 public static void main(String[] args) {
 		 SinglyLinkedlist sll = new SinglyLinkedlist();
 		 sll.head = new ListNode(10);
@@ -53,6 +65,12 @@ public class SinglyLinkedlist {
 			sll1.insertAtstart(80);
 			sll1.insertAtstart(10);
 			sll1.display();
+			
+			 SinglyLinkedlist sll2 = new SinglyLinkedlist();
+				sll2.insertAtstart(12);
+				sll2.insertAtstart(80);
+				sll2.insertAtstart(10);
+				sll2.display();
 		 
 		 
 	 }
