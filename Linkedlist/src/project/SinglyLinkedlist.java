@@ -14,7 +14,7 @@ public class SinglyLinkedlist {
 	 public void display() {
 		 ListNode current = head;
 		 while(current!=null) {
-			 System.out.println(current.data + "->");
+			 System.out.print(current.data + "->");
 			 current=current.next;
 		 }
 		 System.out.print("null");
