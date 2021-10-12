@@ -107,6 +107,17 @@ public class SinglyLinkedlist {
 			return current;
 		}
 
+	 //how to find the middle node in a singly linked list
+	 public ListNode mid() {
+		 ListNode slowptr = head;
+		 ListNode fastptr = head;
+		 while(fastptr != null && fastptr.next!=null) {
+			 slowptr = slowptr.next;
+			 fastptr=fastptr.next.next;
+		 }
+		 return slowptr;
+	 }
+	 
 	 public static void main(String[] args) {
 		 SinglyLinkedlist sll = new SinglyLinkedlist();
 		 sll.head = new ListNode(10);
