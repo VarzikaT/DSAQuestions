@@ -48,6 +48,26 @@ public class SinglyLinkedlist {
 			}
 			current.next=newNode;
 		}
+	 
+	 public void ins(int position, int value) {
+			ListNode node = new ListNode(value);
+			if(position==1) {
+			node.next=head;
+			head=node;
+		}
+			else {
+				ListNode previous = head;
+				int count =1;
+				while(count<position-1){
+					previous=previous.next;
+					count++;
+				}
+				ListNode current = previous.next;
+				previous.next=node;
+				node.next=current;
+			}		
+			}
+	 
 	 public ListNode deleteFirst() {
 			if(head==null) {
 				return null;
@@ -84,18 +104,20 @@ public class SinglyLinkedlist {
 		 sll.display();
 		 System.out.println(sll.length());
 		 SinglyLinkedlist sll1 = new SinglyLinkedlist();
-			sll1.insertAtstart(12);
-			sll1.insertAtstart(80);
-			sll1.insertAtstart(10);
-			sll1.display();
+//			sll1.insertAtstart(12);
+//			sll1.insertAtstart(80);
+//			sll1.insertAtstart(10);
+//			sll1.display();
 			
 			 SinglyLinkedlist sll2 = new SinglyLinkedlist();
-				sll2.insertAtstart(12);
-				sll2.insertAtstart(80);
-				sll2.insertAtstart(10);
+//				sll2.insertAtstart(12);
+//				sll2.insertAtstart(80);
+//				sll2.insertAtstart(10);
+//				sll2.display();
+//		 
+				sll2.ins(1,3);
+				sll2.ins(2,5);
 				sll2.display();
-		 
-		 
 	 }
 
 		
