@@ -117,7 +117,32 @@ public class SinglyLinkedlist {
 		 }
 		 return slowptr;
 	 }
-	 
+	 //how to find nth node from end
+	 public ListNode getnthnnodefromend(int n)
+	 {
+		 if(head==null)
+		 {
+			 return null;
+		}
+		 if(n<=0) {
+			 throw new IllegalArgumentException("Invalid value:n="+n);
+		 }
+		 ListNode mainptr= head;
+		 ListNode refptr = head;
+		 int count = 0;
+		 while(count<0) {
+			 if(refptr == null) {
+				 throw new IllegalArgumentException(n+"is greater than the number of nodes in list");
+			 }
+			 refptr = refptr.next;
+			 count++;
+		 }
+		 while(refptr!=null) {
+			 refptr=refptr.next;
+			 mainptr=mainptr.next;
+		 }
+		 return mainptr;
+	 }
 	 public static void main(String[] args) {
 		 SinglyLinkedlist sll = new SinglyLinkedlist();
 		 sll.head = new ListNode(10);
