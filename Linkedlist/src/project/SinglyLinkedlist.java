@@ -143,6 +143,22 @@ public class SinglyLinkedlist {
 		 }
 		 return mainptr;
 	 }
+	//program to delete duplicate elements from a sorted linkedlist in java
+	 public void removeduplicates() {
+			if(head==null) {
+				return;
+			}
+			ListNode current =head;
+			while(current!= null && current.next!=null) {
+				if(current.data == current.next.data) {
+					current.next = current.next.next;
+				}
+				else {
+					current= current.next;
+				}
+			}
+		}
+	
 	 public static void main(String[] args) {
 		 SinglyLinkedlist sll = new SinglyLinkedlist();
 		 sll.head = new ListNode(10);
@@ -154,7 +170,7 @@ public class SinglyLinkedlist {
 		 second.next = third; //10->1->8
 		 third.next= fourth; //10->1->8->11->null	
 		 sll.display();
-		 System.out.println(sll.length());
+//		 System.out.println(sll.length());
 		 SinglyLinkedlist sll1 = new SinglyLinkedlist();
 //			sll1.insertAtstart(12);
 //			sll1.insertAtstart(80);
@@ -162,17 +178,20 @@ public class SinglyLinkedlist {
 //			sll1.display();
 			
 			 SinglyLinkedlist sll2 = new SinglyLinkedlist();
-//				sll2.insertAtstart(12);
-//				sll2.insertAtstart(80);
-//				sll2.insertAtstart(10);
-//				sll2.display();
+				sll2.insertAtstart(12);
+				sll2.insertAtstart(80);
+				sll2.insertAtstart(10);
+				sll2.insertAtstart(10);
+				sll2.display();
+				sll2.removeduplicates();
+				sll2.display();
 //		 
-				sll2.ins(1,3);
-				sll2.ins(2,5);
-				sll2.display();
-				
-				sll2.delete(2,5);
-				sll2.display();
+//				sll2.ins(1,3);
+//				sll2.ins(2,5);
+//				sll2.display();
+//				
+//				sll2.delete(2,5);
+//				sll2.display();
 	 }
 
 		
