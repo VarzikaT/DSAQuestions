@@ -31,4 +31,9 @@ public class Binarytree {
 		
 		
 	}
+		public static void main(String args[]) {
+			BinaryTree bt = new BinaryTree();
+			bt.createBinaryTree();
+		}
+	}
 }
