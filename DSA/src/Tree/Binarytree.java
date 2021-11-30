@@ -23,7 +23,7 @@ public class Binarytree {
 		root=first;
 		first.left = second;
 		first.right = third;
-		second.left = fouth;
+		second.left = fourth;
 		second.right = fifth;
 		third.left = sixth;
 		third.right = seventh;
@@ -32,10 +32,9 @@ public class Binarytree {
 		
 	}
 		public static void main(String args[]) {
-			BinaryTree bt = new BinaryTree();
+			Binarytree bt = new Binarytree();
 			bt.createBinaryTree();
 		}
-	}
 		public void preOrder(TreeNode root) {
 			if(root==null) {
 				return;
@@ -43,4 +42,5 @@ public class Binarytree {
 			System.out.print(root.data + " ");
 			preOrder(root.left);
 			preOrder(root.right);
+}
 }
