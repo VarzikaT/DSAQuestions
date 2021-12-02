@@ -26,10 +26,7 @@ public class Binarytree {
 		second.left = fourth;
 		second.right = fifth;
 		third.left = sixth;
-		third.right = seventh;
-		
-		
-		
+		third.right = seventh;	
 	}
 		public static void main(String args[]) {
 			Binarytree bt = new Binarytree();
@@ -39,8 +36,17 @@ public class Binarytree {
 			if(root==null) {
 				return;
 			}
-			System.out.print(root.data + " ");
-			preOrder(root.left);
-			preOrder(root.right);
+			Stack<TreeNode> stack = new Stack<>();
+			stack.push(root);
+			while(!stack.isEmpty()) {
+				TreeNode temp = stack.pop();
+				System.out.print(temp.data+" ");
+				if(temp.right != null) {
+					stack.push(temp.right);
+				}
+				if(temp.left != null) {
+					stack.push(temp.left);
+				}
+			}
 }
 }
