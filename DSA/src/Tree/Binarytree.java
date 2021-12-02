@@ -32,6 +32,8 @@ public class Binarytree {
 			Binarytree bt = new Binarytree();
 			bt.createBinaryTree();
 		}
+		
+		//using iteration
 		public void preOrder(TreeNode root) {
 			if(root==null) {
 				return;
@@ -39,10 +41,10 @@ public class Binarytree {
 			Stack<TreeNode> stack = new Stack<>();
 			stack.push(root);
 			while(!stack.isEmpty()) {
-				TreeNode temp = stack.pop();
+				TreeNode temp = stack.pop();//temporary variable pointing to stack
 				System.out.print(temp.data+" ");
 				if(temp.right != null) {
-					stack.push(temp.right);
+					stack.push(temp.right);//push the Node's right child in the stack
 				}
 				if(temp.left != null) {
 					stack.push(temp.left);
