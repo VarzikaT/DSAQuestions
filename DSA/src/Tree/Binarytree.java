@@ -50,5 +50,10 @@ public class Binarytree {
 					stack.push(temp.left);
 				}
 			}
+			
+		//inorder traversal of binary tree using recursion
+			public void inOrder(TreeNode root) {
+				
+			}
 }
 }
