@@ -5,13 +5,13 @@ public class SelectionSort {
 	    {
 	        int n = arr.length;
 	        for (int i = 0; i < n-1; i++)
-	        { int min_idx = i;
+	        { int minidx = i;
 	            for (int j = i+1; j < n; j++)
-	                if (arr[j] < arr[min_idx])
-	                    min_idx = j;
+	                if (arr[j] < arr[minidx])
+	                    minidx = j;
 	 
-	            int temp = arr[min_idx];
-	            arr[min_idx] = arr[i];
+	            int temp = arr[minidx];
+	            arr[minidx] = arr[i];
 	            arr[i] = temp;
 	        }
 	    }
@@ -26,7 +26,7 @@ public class SelectionSort {
 	    public static void main(String args[])
 	    {
 	        SelectionSort ob = new SelectionSort();
-	        int arr[] = {64,25,12,22,11};
+	        int arr[] = {30,45,98,76,15};
 	        ob.sort(arr);
 	        System.out.println("Sorted array");
 	        ob.printArray(arr);
