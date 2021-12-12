@@ -1,7 +1,6 @@
 package sorting;
 
 public class QuickSort {
-
 	static void swap(int[] arr, int i, int j)
 	{
 	    int temp = arr[i];
@@ -10,16 +9,12 @@ public class QuickSort {
 	}
 	static int partition(int[] arr, int low, int high)
 	{
-	      
-	    // pivot
 	    int pivot = arr[high]; 
 	    int i = (low - 1); 
-	  
 	    for(int j = low; j <= high - 1; j++)
 	    {
 	        if (arr[j] < pivot) 
-	        {
-	            i++; 
+	        {   i++; 
 	            swap(arr, i, j);
 	        }
 	    }
@@ -31,7 +26,6 @@ public class QuickSort {
 	    if (low < high) 
 	    {
 	        int pi = partition(arr, low, high);
-	  
 	        quickSort(arr, low, pi - 1);
 	        quickSort(arr, pi + 1, high);
 	    }
@@ -40,14 +34,12 @@ public class QuickSort {
 	{
 	    for(int i = 0; i < size; i++)
 	        System.out.print(arr[i] + " ");
-	          
 	    System.out.println();
 	}
 	public static void main(String[] args)
 	{
-	    int[] arr = { 10, 7, 8, 9, 1, 5 };
+	    int[] arr = {10,45,60,78,96};
 	    int n = arr.length;
-	      
 	    quickSort(arr, 0, n - 1);
 	    System.out.println("Sorted array: ");
 	    printArray(arr, n);
